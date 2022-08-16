@@ -1,0 +1,10 @@
+@use '../../../styles/util' as *
+
+header
+    background-color: var(--color-primary)
+    background-image: url("./bg-header-mobile.svg")
+    height: 150px
+
+    @include medium
+        height: 100px
+        background-image: url("./bg-header-desktop.svg")

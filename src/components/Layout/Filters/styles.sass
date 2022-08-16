@@ -1,0 +1,44 @@
+@use '../../../styles/util' as *
+
+#filters
+    @include flex(space-between)
+    background-color: var(--color-bg-b)
+    margin-top: -2.5em
+    padding: 1.5em 0
+    padding-left: 2.2em
+    box-shadow: $boxShadow
+    border-radius: $borderRadius
+
+    .list, .filter, .icon-wrapper
+        @include flex
+
+    .list
+        gap: 1.5em
+        flex-wrap: wrap
+
+    .filter
+        background-color: var(--color-filters)
+        border-radius: $borderRadius
+        overflow: hidden
+
+        // set align-items to initial so that child div's have same height
+        align-items: initial
+        
+
+        > div
+            padding: 10px 12px
+
+        .icon-wrapper
+            cursor: pointer
+            background-color: var(--color-primary)
+
+            &:hover
+                opacity: .7
+                background-color: black
+
+    button
+        color: var(--color-text-caption)
+
+        &:hover
+            color: var(--color-text)
+            text-decoration: underline

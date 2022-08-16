@@ -1,0 +1,33 @@
+@use "../util" as *
+
+html
+    box-sizing: border-box
+    scrollbar-width: none
+
+    &::-webkit-scrollbar
+        display: none
+
+*, 
+*::before, 
+*::after
+    box-sizing: inherit
+
+body
+    margin: 0
+    padding: 0
+    font-size: 15px
+    font-weight: 700
+    font-family: var(--font)
+    color: var(--color-text)
+    background-color: var(--color-bg)
+
+button
+    font-family: inherit
+    font-size: inherit
+    font-weight: inherit
+
+button, .icon-wrapper, #jobs .job, #jobs .details .position
+    transition: $transition
+
+.container, main
+    @include container-b

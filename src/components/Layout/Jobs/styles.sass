@@ -1,0 +1,129 @@
+@use '../../../styles/util' as *
+
+#jobs
+    padding-top: 4em
+
+    .msg
+        text-align: center
+        font-size: var(--text-xl)
+        margin-top: 5em
+
+    .job
+        margin-bottom: 3em
+        box-shadow: $boxShadow
+        border-radius: $borderRadius
+        background-color: var(--color-bg-b)
+        border-left: solid 5px transparent
+
+        &:hover
+            border-color: var(--color-primary)
+
+            .details .position
+                color: var(--color-text)
+
+        .details
+            
+            > div
+                display: grid
+                column-gap: 1em
+                grid-template-columns: repeat(3, auto)
+
+            .company-name, .status
+                @include flex
+
+            .status
+                justify-content: space-between
+                row-gap: 1em
+                text-transform: uppercase
+                color: white
+
+                > div
+                    text-align: center
+                    width: fit-content
+                    border-radius: 1em
+                    padding: 5px 10px 2px
+                
+                    &.new
+                        background-color: var(--color-text)
+
+                    &.featured
+                        background-color: black
+
+            .position
+                color: rgba(0, 0, 0, .8)
+                font-size: var(--text-lg)
+                margin: .8em 0
+                cursor: pointer
+
+            .captions
+                font-weight: 500
+                color: var(--color-text-caption)
+
+                > div:nth-child(2)
+                    @include flex
+                    gap: 2em
+
+                    &:before, &:after
+                        content: ""
+                        display: inline-block
+                        height: 5px
+                        width: 5px
+                        background-color: var(--color-text-caption)
+                        border-radius: 50%
+
+        .tags
+            @include flex(flex-end)
+
+            .list
+                @include flex
+                gap: 1em
+                flex-wrap: wrap
+
+                button
+                    color: var(--color-text)
+                    background-color: var(--color-filters)
+                    border-radius: $borderRadius
+
+                    &:hover
+                        color: white
+                        background-color: var(--color-primary)
+
+                    &:active
+                        opacity: .7
+
+    @include small-only
+        .job
+            padding: 1em
+
+            .company-logo, .company-logo img
+                height: 60px
+                width: 60px
+
+            .company-logo
+                margin-top: -40px
+
+            .details
+                padding: 1.5em 0
+                border-bottom: solid 1px var(--color-text-caption)
+
+            .tags
+                justify-content: flex-start
+                margin: 2em 0 1em
+
+
+    @include medium
+        .job
+            @include flex
+            padding: 1.5em 2.2em
+
+            .details
+                padding: 0 2em
+                flex-shrink: 0
+
+            .tags
+                flex-grow: 1
+
+
+
+
+                        
