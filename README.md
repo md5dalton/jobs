@@ -54,6 +54,7 @@ Your users should be able to:
 
 - React context API
 - JS array functions
+- CSS Grid
 
 ## Author
 

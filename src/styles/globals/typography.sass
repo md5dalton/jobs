@@ -1,17 +1,20 @@
-// https://medium.com/codyhouse/create-your-design-system-part-1-typography-7c630d9092bd
+@use "sass:math"
+@use "sass:list"
+
+$sizes: md, lg, xl, xxl, xxxl
+
+/* set base values */
+$textBaseSize: 1em
+$textScaleRatio: 1.2
 
 :root
-    /* set base values */
-    --text-base-size: 1em
-    --text-scale-ratio: 1.2
-
     /* type scale */
-    --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)))
-    --text-sm: calc(1em / var(--text-scale-ratio))
-    --text-md: calc(1em * var(--text-scale-ratio))
-    --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio))
-    --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio))
-    --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio))
-    --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio))
-    
-    // --font-weight-bold: 700
+    --text-xs: #{calc($textBaseSize / math.pow($textScaleRatio, 2))}
+    --text-sm: #{calc($textBaseSize / $textScaleRatio)}
+
+    @each $size in $sizes
+        $power: list.index($sizes, $size)
+        --text-#{$size}: #{$textBaseSize * math.pow($textScaleRatio, $power)}
+
+// Adapted from:
+// https://medium.com/codyhouse/create-your-design-system-part-1-typography-7c630d9092bd
