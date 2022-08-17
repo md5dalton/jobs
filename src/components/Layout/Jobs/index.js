@@ -16,6 +16,7 @@ export default () => {
         - Using rest, merge the 2 arrays and filter them to find if they contain any element from filters
     */
 
+    // fn to return jobs that match current filters
     const filterJobs = jobs => jobs.filter(({ languages, tools }) => [...languages, ...tools].filter(value => filters.includes(value)).length ) 
     
     const availableJobs = filters.length ? filterJobs(jobs) : jobs

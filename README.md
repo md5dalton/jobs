@@ -28,8 +28,8 @@ Your users should be able to:
 ### Links
 
 - Repository URL: [Github](https://github.com/md5dalton/jobs)
+- Live Site URL: [Vercel](https://jobs-dalton.vercel.app)
 <!-- - Solution URL: [Frontend Mentor](https://www.frontendmentor.io/challenges) -->
-<!-- - Live Site URL: [Vercel](https://shorty-pied.vercel.app) -->
 
 
 ## My process
